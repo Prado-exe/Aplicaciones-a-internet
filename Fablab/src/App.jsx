@@ -8,6 +8,7 @@ function App() {
   return (
     <>
     <Navbar />
+    <p>BODYYYYYY?????</p>
     </>
   )
 }
