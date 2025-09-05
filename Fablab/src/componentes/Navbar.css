@@ -1,21 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 .header {
-    position: fixed;      
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;        
-    align-items: center;  
-    justify-content: space-between;
-    padding: 10px 5%;
-    background-color: green;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 20px; 
+  background-color: #fff;
+  height: 70px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 
 .logo img {
-    height: 250px;     
-    width: auto;      
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+  height: 50px;
+  margin-left: 0; 
+  display: block;
+}
+
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #007bff;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    padding: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
 }
