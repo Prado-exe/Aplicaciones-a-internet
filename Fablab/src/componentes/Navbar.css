@@ -1,0 +1,21 @@
+.header {
+    position: fixed;      
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;        
+    align-items: center;  
+    justify-content: space-between;
+    padding: 10px 5%;
+    background-color: green;
+    z-index: 1000;
+}
+
+
+.logo img {
+    height: 250px;     
+    width: auto;      
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
