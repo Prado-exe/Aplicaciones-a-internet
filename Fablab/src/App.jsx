@@ -30,7 +30,7 @@ function App() {
           className="hero-img"
         />
         <div className="gradient-overlay" />
-        <h1 className="hero-text">FABLAB Y EL PVP CONTRA PERU</h1>
+        <h1 className="hero-text">Bienvenidos al sitio web del FABLAB FIULS</h1>
       </section>
 
       <UniqueDivider />
