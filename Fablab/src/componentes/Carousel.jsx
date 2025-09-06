@@ -2,10 +2,8 @@ import { useState, useEffect } from 'react';
 import '../styles/Carousel.css';
 
 const images = [
-  'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Hollow_Knight_first_cover_art.webp/250px-Hollow_Knight_first_cover_art.webp.png',
-  'https://upload.wikimedia.org/wikipedia/id/c/c0/Hollow_Knight_cover.jpg',
-  'https://sm.ign.com/ign_es/cover/h/hollow-kni/hollow-knight-silksong_db1d.jpg',
-  'https://assets1.ignimgs.com/thumbs/userUploaded/2018/6/21/hollowknight1280-1529636220082.jpg',
+  'https://www.userena.cl/images/logos_web/descarga/logo-uls-vertical.png',
+  'https://fablab.fiuls.cl/wp-content/uploads/2024/08/Grafica-Mousepad-FABLAB-1.png',
   // etc.
 ];
 
