@@ -3,7 +3,7 @@ import Navbar from './componentes/Navbar';
 import UniqueDivider from './componentes/UniqueDivider';
 import Carousel from './componentes/Carousel';
 import './styles/App.css';
-
+import fablabImg from './assets/fablab.png';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
 
       <section className="hero-section" style={{ opacity }}>
         <img
-          src="https://portal.33bits.net/wp-content/uploads/2018/05/guia-hollow-knight-1024x640.jpg"
+          src={fablabImg}
           alt="Imagen inicial"
           className="hero-img"
         />
