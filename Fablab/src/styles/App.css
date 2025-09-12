@@ -1,16 +1,42 @@
-html, body, #root {
-  margin: 0;
-  padding: 0;
+/* Reset y saneamiento básico */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-/* General section styles */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+}
+
+/* Defensa global contra desbordes horizontales inesperados */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Imágenes a ancho completo sin “whitespace” inline */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Enlaces */
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Secciones generales */
 section {
   width: 100%;
   padding: 48px 0;
   background: #fff;
 }
 
+/* Divider ondulado */
 .unique-divider {
   width: 100%;
   overflow: hidden;
@@ -25,29 +51,55 @@ section {
 /* Hero section */
 .hero-section {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;            /* antes 100vw que causaba scroll horizontal */
+  height: 100vh;          /* base */
+  min-height: 100svh;     /* mejora en móviles modernos */
   transition: opacity 0.3s ease-out;
   overflow: hidden;
   margin-top: 0;
-  padding: 0;    /* <-- Esto elimina el espacio que ves en rojo */
+  padding: 0;
 }
 
+/* Imagen de fondo ocupando todo el hero */
 .hero-img {
+  position: absolute;
+  inset: 0;               /* top/right/bottom/left: 0 */
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 50%;
+  display: block;
+  z-index: 0;
 }
+
+/* Gradiente solo en la parte inferior */
 .gradient-overlay {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   height: 20vh;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(255,255,255,1) 95%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 20%,
+    rgba(255,255,255,1) 95%
+  );
   pointer-events: none;
+  z-index: 1;
 }
+
+/* Carrusel centrado sobre la imagen */
+.hero-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;                       /* por encima del gradiente */
+  width: min(90vw, 1100px);
+  pointer-events: auto;
+}
+
+/* Texto del hero (si quieres mantenerlo en alguna otra vista) */
 .hero-text {
   position: absolute;
   top: 50%;
@@ -57,9 +109,11 @@ section {
   font-size: 4vw;
   font-weight: bold;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  margin: 0;
+  z-index: 2;
 }
 
-/* Other sections alternate background */
+/* Alternancia de fondos en otras secciones */
 .carousel-section {
   background: #f7f7f7;
 }
@@ -81,6 +135,7 @@ section {
   font-weight: bold;
 }
 
+/* Área de prueba de scroll */
 .scroll-test {
   height: 200vh;
   background: #eee;

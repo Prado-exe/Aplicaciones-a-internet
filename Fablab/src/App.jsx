@@ -5,7 +5,6 @@ import Carousel from './componentes/Carousel';
 import './styles/App.css';
 import fablabImg from './assets/fablab.png';
 
-
 function App() {
   const [opacity, setOpacity] = useState(1);
 
@@ -23,23 +22,21 @@ function App() {
     <>
       <Navbar />
 
-      <section className="hero-section" style={{ opacity }}>
-        <img
-          src={fablabImg}
-          alt="Imagen inicial"
-          className="hero-img"
-        />
+      <section className="hero-section" style={{ opacity,backgroundColor: "#1c1c1c", }}>
+        {/* <img src={fablabImg} alt="Imagen inicial" className="hero-img" />   */}
+
+        {/* Carrusel centrado sobre la imagen */}
+        <div className="hero-center">
+          <Carousel />
+        </div>
+
+        {/* Deja el gradiente debajo del carrusel */}
         <div className="gradient-overlay" />
-        <h1 className="hero-text">FABLAB Y EL PVP CONTRA PERU</h1>
       </section>
 
       <UniqueDivider />
 
-      <section className="carousel-section">
-        <Carousel />
-      </section>
-
-      <UniqueDivider />
+      {/* (Eliminada) sección de carrusel inferior */}
 
       <section className="events-section">
         <p className="body-text">Próximos eventos / talleres</p>

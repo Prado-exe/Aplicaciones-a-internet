@@ -1,4 +1,3 @@
-// Puedes remplazar este SVG por tu propio diseño
 function UniqueDivider() {
   return (
     <div className="unique-divider">
