@@ -3,8 +3,6 @@ import Navbar from './componentes/Navbar';
 import UniqueDivider from './componentes/UniqueDivider';
 import Carousel from './componentes/Carousel';
 import './styles/App.css';
-import fablabImg from './assets/fablab_test.png';
-
 
 function App() {
   const [opacity, setOpacity] = useState(1);
@@ -12,7 +10,7 @@ function App() {
   useEffect(() => {
     function handleScroll() {
       const scrollTop = window.scrollY;
-      const newOpacity = Math.max(1 - (scrollTop / 400)*0.6, 0);
+      const newOpacity = Math.max(1 - (scrollTop / 400) * 0.6, 0);
       setOpacity(newOpacity);
     }
     window.addEventListener('scroll', handleScroll);
@@ -23,19 +21,8 @@ function App() {
     <>
       <Navbar />
 
+      {/* Sección principal con el carrusel */}
       <section className="hero-section" style={{ opacity }}>
-        <img
-          src={fablabImg}
-          alt="Imagen inicial"
-          className="hero-img"
-        />
-        <div className="gradient-overlay" />
-        <h1 className="hero-text">"Bienvenidos al sitio web del FABLAB FIULS"</h1>
-      </section>
-
-      <UniqueDivider />
-
-      <section className="carousel-section">
         <Carousel />
       </section>
 
