@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './NavBar.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo_test.png';
 
 function Navbar() {
   const [open, setOpen] = useState(false);       

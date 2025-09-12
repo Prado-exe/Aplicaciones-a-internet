@@ -3,7 +3,7 @@ import Navbar from './componentes/Navbar';
 import UniqueDivider from './componentes/UniqueDivider';
 import Carousel from './componentes/Carousel';
 import './styles/App.css';
-import fablabImg from './assets/fablab.png';
+import fablabImg from './assets/fablab_test.png';
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     function handleScroll() {
       const scrollTop = window.scrollY;
-      const newOpacity = Math.max(1 - scrollTop / 400, 0);
+      const newOpacity = Math.max(1 - (scrollTop / 400)*0.6, 0);
       setOpacity(newOpacity);
     }
     window.addEventListener('scroll', handleScroll);
@@ -30,7 +30,7 @@ function App() {
           className="hero-img"
         />
         <div className="gradient-overlay" />
-        <h1 className="hero-text">Bienvenidos al sitio web del FABLAB FIULS</h1>
+        <h1 className="hero-text">"Bienvenidos al sitio web del FABLAB FIULS"</h1>
       </section>
 
       <UniqueDivider />
