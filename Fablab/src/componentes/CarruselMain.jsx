@@ -1,85 +1,110 @@
-import { useState, useEffect } from 'react';
 import '../styles/CarruselMain.css';
 import fablabImg from '../assets/fablab_test.png';
 
-const images = [
-  fablabImg,
-  // Agrega otras imágenes aquí si quieres
+// ✅ Ahora cada slide es un objeto con: src, tipo, titulo y descripcion
+const slides = [
+   {
+    src: 'https://fablab.fiuls.cl/wp-content/uploads/2024/08/Grafica-Mousepad-FABLAB-1.png',
+    tipo: 'Eventos',
+    titulo: 'Jam de videojuegos',
+    descripcion: 'Maratón creativa para diseñar y programar videojuegos en equipo',
+   },
+
+   {
+    src: 'https://fablab.fiuls.cl/wp-content/uploads/2024/08/IMG_6160-scaled.jpg',
+    tipo: 'Servicios',
+    titulo: 'Impresora 3D',
+    descripcion: 'Fabricación aditiva para prototipos funcionales y piezas personalizadas.',
+   },
+  {
+    src: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Cortadora_Laser_-_FabLAB_Newton.jpg',
+    tipo: 'Servicios',
+    titulo: 'Cortadora Láser',
+    descripcion: 'Cortes de alta precisión para acrílico, MDF y más. Ideal para prototipos y maquetas.',
+  },
+
 ];
 
+import { useState, useEffect, useRef } from 'react';
+
 function CarruselMain() {
-  const [opacity, setOpacity] = useState(1);        // Para fade on scroll
+  const [opacity, setOpacity] = useState(1);
   const [current, setCurrent] = useState(0);
-  const [fade, setFade] = useState(false);          // Para fade entre imágenes
-  const length = images.length;
+  const [fade, setFade] = useState(false);
+  const length = slides.length;
 
-  // Opacidad al hacer scroll
-  useEffect(() => {
-    function handleScroll() {
-      const startFade = 150;
-      const fadeLength = 300;
-      const scrollTop = window.scrollY;
+  const intervalRef = useRef(null); // 🆕 guardamos el id del intervalo
 
-      let newOpacity;
-      if (scrollTop <= startFade) newOpacity = 1;
-      else if (scrollTop >= startFade + fadeLength) newOpacity = 0;
-      else newOpacity = 1 - (scrollTop - startFade) / fadeLength;
+  // función que arranca/reinicia el intervalo
+  const startAutoSlide = () => {
+    // limpia cualquier intervalo activo
+    if (intervalRef.current) clearInterval(intervalRef.current);
 
-      setOpacity(newOpacity);
-    }
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Cambio automático con efecto fade
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Empieza fade out
+    intervalRef.current = setInterval(() => {
       setFade(true);
-
-      // Cambia imagen tras 400ms y fade in
       setTimeout(() => {
         setCurrent(prev => (prev === length - 1 ? 0 : prev + 1));
         setFade(false);
       }, 400);
     }, 5000);
+  };
 
-    return () => clearInterval(interval);
+  useEffect(() => {
+    startAutoSlide();
+    return () => clearInterval(intervalRef.current);
   }, [length]);
 
+  // 🔑 flechas: cambian slide y reinician contador
   const prevSlide = () => {
     setFade(true);
     setTimeout(() => {
-      setCurrent(current === 0 ? length - 1 : current - 1);
+      setCurrent(prev => (prev === 0 ? length - 1 : prev - 1));
       setFade(false);
+      startAutoSlide();   // ⬅️ reinicia
     }, 400);
   };
 
   const nextSlide = () => {
     setFade(true);
     setTimeout(() => {
-      setCurrent(current === length - 1 ? 0 : current + 1);
+      setCurrent(prev => (prev === length - 1 ? 0 : prev + 1));
       setFade(false);
+      startAutoSlide();   // ⬅️ reinicia
     }, 400);
   };
+
+  const slide = slides[current];
 
   return (
     <section className="hero-section" style={{ opacity }}>
       <img
-        src={images[current]}
-        alt="Imagen principal"
+        src={slide.src}
+        alt={slide.titulo || 'Imagen principal'}
         className={`hero-img ${fade ? 'fade' : ''}`}
       />
-      <div className="gradient-overlay" />
-      <h1 className="hero-text">Bienvenidos al sitio web del FABLAB FIULS</h1>
 
+      {/* Degradado inferior para leer mejor el texto */}
+      <div className="gradient-overlay" />
+
+      {/* 🔖 Etiqueta de tipo (ej. Servicio) */}
+      <span className="label-badge" aria-label={`Tipo: ${slide.tipo || 'Item'}`}>
+        {slide.tipo || 'Item'}
+      </span>
+
+      {/* 📝 Zona de texto inferior con título y descripción */}
+      <div className={`caption ${fade ? 'fade' : ''}`}>
+        <h2 className="caption-title">{slide.titulo || 'Título'}</h2>
+        <p className="caption-desc">{slide.descripcion || ''}</p>
+      </div>
+
+      {/* Flechas / áreas clicables */}
       <div
         className="hover-area left"
         onClick={prevSlide}
         aria-label="Anterior"
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => { if(e.key === 'Enter') prevSlide(); }}
+        onKeyDown={(e) => { if (e.key === 'Enter') prevSlide(); }}
       >
         <span className="arrow left-arrow">&#10094;</span>
       </div>
@@ -89,7 +114,7 @@ function CarruselMain() {
         aria-label="Siguiente"
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => { if(e.key === 'Enter') nextSlide(); }}
+        onKeyDown={(e) => { if (e.key === 'Enter') nextSlide(); }}
       >
         <span className="arrow right-arrow">&#10095;</span>
       </div>
