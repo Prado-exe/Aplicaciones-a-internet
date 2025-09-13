@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './NavBar.css';
 import logo from '../assets/logo_test.png';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [open, setOpen] = useState(false);       
@@ -86,47 +87,33 @@ const handleParentClick = (key) => {
             </ul>
           </li>
 
-          {/* EVENTOS */}
-          <li className={`menu-item has-submenu ${subOpen === 'eventos' ? 'open-sub' : ''}`}>
-            <button
-              type="button"
-              className="menu-parent"
-              aria-haspopup="true"
-              aria-expanded={subOpen === 'eventos'}
-              onClick={() => handleParentClick('eventos')}
-            >
-              Eventos <span className="caret" aria-hidden="true">▾</span>
-            </button>
-            <ul className="submenu">
-              <li><a href="/" onClick={handleLinkClick}>En curso</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Proximamente</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Finalizados</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Talleres y Proyectos</a></li>
-            </ul>
-          </li>
+              {/* EVENTOS */}
+              <li
+                className={`menu-item has-submenu ${
+                  subOpen === "eventos" ? "open-sub" : ""
+                }`}
+              >
+                <Link
+                  to="/eventos"
+                  className="menu-parent"
+                  onClick={() => toggleSubmenu("eventos")}
+                >
+                  Eventos <span className="caret" aria-hidden="true">▾</span>
+                </Link>
+              </li>
 
-          {/* SERVICIOS */}
-          <li className={`menu-item has-submenu ${subOpen === 'servicios' ? 'open-sub' : ''}`}>
-            <button
-              type="button"
-              className="menu-parent"
-              aria-haspopup="true"
-              aria-expanded={subOpen === 'servicios'}
-              onClick={() => handleParentClick('servicios')}
-            >
-              Servicios <span className="caret" aria-hidden="true">▾</span>
-            </button>
-            <ul className="submenu">
-              <li><a href="/" onClick={handleLinkClick}>Impresión 3D</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Espacio Co-Working</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Cortadora Láser</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Electronica y Robotica</a></li>
-            </ul>
-          </li>
 
-          <li className="menu-item">
-            <a href="/" onClick={handleLinkClick}>Noticias</a>
-          </li>
+            {/* SERVICIOS */}
+            <li className={`menu-item has-submenu ${subOpen === 'servicios' ? 'open-sub' : ''}`}>
+              <Link to="/servicios" className="menu-parent">
+                Servicios <span className="caret" aria-hidden="true">▾</span>
+              </Link>
+            </li>
+
+            <li className="menu-item">
+              <a href="/" onClick={handleLinkClick}>Noticias</a>
+            </li>
+
         </ul>
       </nav>
     </header>

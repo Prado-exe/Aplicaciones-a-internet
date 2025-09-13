@@ -6,9 +6,8 @@ import './styles/App.css';
 import Footer from './componentes/footbar';
 import BtnVolverInicio from './componentes/BtnVolverInicio';
 import CarruselMain from './componentes/CarruselMain';
-import EventosSection from './componentes/EventosSetion';
-import NoticeBoard from './componentes/Noticiero';
 import ImportantNews from './componentes/Noticiero';
+
 
 function App() {
   const [opacity, setOpacity] = useState(1);
@@ -32,17 +31,8 @@ function App() {
 
       <UniqueDivider />
 
-      
-
       <section className="carousel-section">
         <Carousel />
-      </section>
-
-      
-
-      <section className="events-section">
-        <UniqueDivider />
-         <EventosSection />
       </section>
 
       <UniqueDivider />
@@ -53,6 +43,7 @@ function App() {
 
       <UniqueDivider/>
       <BtnVolverInicio />
+      
 
       <Footer />
 
