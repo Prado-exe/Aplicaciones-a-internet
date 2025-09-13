@@ -4,8 +4,9 @@ import UniqueDivider from './componentes/UniqueDivider';
 import Carousel from './componentes/Carousel';
 import './styles/App.css';
 import Footer from './componentes/footbar';
-import fablabImg from './assets/fablab_test.png';
-
+import BtnVolverInicio from './componentes/BtnVolverInicio';
+import CarruselMain from './componentes/CarruselMain';
+import EventosSection from './componentes/EventosSetion';
 
 function App() {
   const [opacity, setOpacity] = useState(1);
@@ -24,38 +25,37 @@ function App() {
 
   return (
     <>
-      <Navbar />
-
-      <section className="hero-section" style={{ opacity }}>
-        <img
-          src={fablabImg}
-          alt="Imagen inicial"
-          className="hero-img"
-        />
-        <div className="gradient-overlay" />
-        <h1 className="hero-text">"Bienvenidos al sitio web del FABLAB FIULS"</h1>
-      </section>
+        <Navbar />
+        <CarruselMain/>
 
       <UniqueDivider />
+
+      
 
       <section className="carousel-section">
         <Carousel />
       </section>
 
-      <UniqueDivider />
+      
 
       <section className="events-section">
-        <p className="body-text">Próximos eventos / talleres</p>
+        <UniqueDivider />
+         <EventosSection />
       </section>
 
-      <UniqueDivider />
+      
 
       <section className="news-section">
+        <UniqueDivider />
         <p className="body-text">Noticias destacadas</p>
       </section>
-
+     
       <UniqueDivider />
       
+      
+
+      <BtnVolverInicio />
+
       <Footer />
 
     </>

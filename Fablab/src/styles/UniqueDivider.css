@@ -1,0 +1,12 @@
+.unique-divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unique-divider svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
