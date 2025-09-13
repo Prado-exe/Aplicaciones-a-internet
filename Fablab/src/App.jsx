@@ -26,7 +26,6 @@ function App() {
 
   return (
     <>
-        <Navbar />
         <CarruselMain/>
 
       <UniqueDivider />
@@ -43,9 +42,6 @@ function App() {
 
       <UniqueDivider/>
       <BtnVolverInicio />
-      
-
-      <Footer />
 
     </>
   );
