@@ -7,6 +7,8 @@ import Footer from './componentes/footbar';
 import BtnVolverInicio from './componentes/BtnVolverInicio';
 import CarruselMain from './componentes/CarruselMain';
 import EventosSection from './componentes/EventosSetion';
+import NoticeBoard from './componentes/Noticiero';
+import ImportantNews from './componentes/Noticiero';
 
 function App() {
   const [opacity, setOpacity] = useState(1);
@@ -43,17 +45,13 @@ function App() {
          <EventosSection />
       </section>
 
-      
-
-      <section className="news-section">
-        <UniqueDivider />
-        <p className="body-text">Noticias destacadas</p>
-      </section>
-     
       <UniqueDivider />
       
-      
+      <div>
+        <ImportantNews/>
+      </div>
 
+      <UniqueDivider/>
       <BtnVolverInicio />
 
       <Footer />
