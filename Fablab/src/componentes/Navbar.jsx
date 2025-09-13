@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './NavBar.css';
 import logo from '../assets/logo_test.png';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [open, setOpen] = useState(false);       
@@ -77,12 +78,9 @@ const handleParentClick = (key) => {
               Sobre Nosotros <span className="caret" aria-hidden="true">▾</span>
             </button>
             <ul className="submenu">
-              <li><a href="/" onClick={handleLinkClick}>Que es FABLAB</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Misión y Visión</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Equipo</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Instalaciones</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Horarios Disponibles</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Comunidad</a></li>
+             <li>
+               <Link to="/pag-quienes-somos" onClick={handleLinkClick}>Quiénes Somos</Link>
+             </li>
             </ul>
           </li>
 
