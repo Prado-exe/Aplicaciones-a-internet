@@ -151,10 +151,3 @@ top: clamp(50px, 4vh, 110px);
     }
   }
 }
-
-.click-overlay {
-  position: absolute;
-  inset: 0;           /* cubre toda el área del slide */
-  z-index: 9;         /* por encima de la imagen y el degradado */
-  cursor: pointer;
-}
