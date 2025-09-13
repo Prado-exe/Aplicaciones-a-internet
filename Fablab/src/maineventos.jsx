@@ -3,6 +3,7 @@ import App from "./App.jsx";
 import EventosPage from "./componentes/Eventospage.jsx";
 import Navbar from "./componentes/Navbar";
 import Footer from "./componentes/footbar";
+import Servicios from './componentes/Servicios';
 
 function MainEventos() {
   return (
@@ -16,7 +17,9 @@ function MainEventos() {
       <Routes>
         <Route path="/eventos" element={<EventosPage />} />
       </Routes>
-
+      <Routes>
+        <Route path="/servicios" element={<Servicios />} />
+      </Routes>
 
       {/* Footer siempre visible */}
       <Footer />

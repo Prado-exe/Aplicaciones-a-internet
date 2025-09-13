@@ -87,31 +87,17 @@ const handleParentClick = (key) => {
             </ul>
           </li>
 
-              {/* EVENTOS */}
-              <li
-                className={`menu-item has-submenu ${
-                  subOpen === "eventos" ? "open-sub" : ""
-                }`}
-              >
-                <Link
-                  to="/eventos"
-                  className="menu-parent"
-                  onClick={() => toggleSubmenu("eventos")}
-                >
-                  Eventos <span className="caret" aria-hidden="true">▾</span>
-                </Link>
-              </li>
-
-
-            {/* SERVICIOS */}
-            <li className={`menu-item has-submenu ${subOpen === 'servicios' ? 'open-sub' : ''}`}>
-              <Link to="/servicios" className="menu-parent">
-                Servicios <span className="caret" aria-hidden="true">▾</span>
+            <li className="menu-item">
+              <Link to="/eventos" onClick={handleLinkClick}>
+                Eventos
               </Link>
             </li>
 
+
             <li className="menu-item">
-              <a href="/" onClick={handleLinkClick}>Noticias</a>
+              <Link to="/servicios" onClick={handleLinkClick}>
+                Servicios
+              </Link>
             </li>
 
         </ul>
