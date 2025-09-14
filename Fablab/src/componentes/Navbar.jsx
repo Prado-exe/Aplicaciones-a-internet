@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './NavBar.css';
-import logo from '../assets/logo.png';
+import '../styles/NavBar.css';
+import logo from '../assets/logo_test.png';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [open, setOpen] = useState(false);       
@@ -61,72 +62,31 @@ const handleParentClick = (key) => {
 
       <nav id="primary-navigation" className={`navbar ${open ? 'open' : ''}`}>
         <ul className="menu">
+          {/* INICIO */}
           <li className="menu-item">
-            <a href="/" onClick={handleLinkClick}>Inicio</a>
+            <Link to="/" className="menu-parent" onClick={handleLinkClick}>
+              Inicio
+            </Link>
           </li>
-
           {/* SOBRE NOSOTROS */}
-          <li className={`menu-item has-submenu ${subOpen === 'sobre' ? 'open-sub' : ''}`}>
-            <button
-              type="button"
-              className="menu-parent"
-              aria-haspopup="true"
-              aria-expanded={subOpen === 'sobre'}
-              onClick={() => handleParentClick('sobre')}
-            >
-              Sobre Nosotros <span className="caret" aria-hidden="true">▾</span>
-            </button>
-            <ul className="submenu">
-              <li><a href="/" onClick={handleLinkClick}>Que es FABLAB</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Misión y Visión</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Equipo</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Instalaciones</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Horarios Disponibles</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Comunidad</a></li>
-            </ul>
-          </li>
-
-          {/* EVENTOS */}
-          <li className={`menu-item has-submenu ${subOpen === 'eventos' ? 'open-sub' : ''}`}>
-            <button
-              type="button"
-              className="menu-parent"
-              aria-haspopup="true"
-              aria-expanded={subOpen === 'eventos'}
-              onClick={() => handleParentClick('eventos')}
-            >
-              Eventos <span className="caret" aria-hidden="true">▾</span>
-            </button>
-            <ul className="submenu">
-              <li><a href="/" onClick={handleLinkClick}>En curso</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Proximamente</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Finalizados</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Talleres y Proyectos</a></li>
-            </ul>
-          </li>
-
-          {/* SERVICIOS */}
-          <li className={`menu-item has-submenu ${subOpen === 'servicios' ? 'open-sub' : ''}`}>
-            <button
-              type="button"
-              className="menu-parent"
-              aria-haspopup="true"
-              aria-expanded={subOpen === 'servicios'}
-              onClick={() => handleParentClick('servicios')}
-            >
-              Servicios <span className="caret" aria-hidden="true">▾</span>
-            </button>
-            <ul className="submenu">
-              <li><a href="/" onClick={handleLinkClick}>Impresión 3D</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Espacio Co-Working</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Cortadora Láser</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Electronica y Robotica</a></li>
-            </ul>
-          </li>
-
           <li className="menu-item">
-            <a href="/" onClick={handleLinkClick}>Noticias</a>
+            <Link to="/pag-quienes-somos" className="menu-parent" onClick={handleLinkClick}>
+              Quiénes Somos
+            </Link>
           </li>
+          {/* SERVICIOS */}
+          <li className="menu-item">
+            <Link to="/pag-servicios" className="menu-parent" onClick={handleLinkClick}>
+              Servicios
+            </Link>
+          </li>
+          {/* NOTICIAS */}
+          <li className="menu-item">
+            <Link to="/pag-noticiero" className="menu-parent" onClick={handleLinkClick}>
+              Eventos
+            </Link>
+          </li>
+
         </ul>
       </nav>
     </header>

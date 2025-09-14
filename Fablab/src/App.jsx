@@ -3,7 +3,15 @@ import Navbar from './componentes/Navbar';
 import UniqueDivider from './componentes/UniqueDivider';
 import Carousel from './componentes/Carousel';
 import './styles/App.css';
-import fablabImg from './assets/fablab.png';
+import Footer from './componentes/footbar';
+import BtnVolverInicio from './componentes/BtnVolverInicio';
+import CarruselMain from './componentes/CarruselMain';
+import EventosSection from './componentes/EventosSetion';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import ProyectosSection from './componentes/ProyectosSection';
+import TalleresSection from './componentes/TalleresSection';
+import AreasSection from './componentes/AreasSection';
+import ImportantNews from './componentes/Noticiero';
 
 
 function App() {
@@ -12,7 +20,7 @@ function App() {
   useEffect(() => {
     function handleScroll() {
       const scrollTop = window.scrollY;
-      const newOpacity = Math.max(1 - scrollTop / 400, 0);
+      const newOpacity = Math.max(1 - (scrollTop / 400)*0.6, 0);
       setOpacity(newOpacity);
     }
     window.addEventListener('scroll', handleScroll);
@@ -22,46 +30,35 @@ function App() {
   return (
     <>
       <Navbar />
-
-      <section className="hero-section" style={{ opacity }}>
-        <img
-          src={fablabImg}
-          alt="Imagen inicial"
-          className="hero-img"
-        />
-        <div className="gradient-overlay" />
-        <h1 className="hero-text">Bienvenidos al sitio web del FABLAB FIULS</h1>
+      <CarruselMain/>
+      <section className="talleres-section">
+        <UniqueDivider variant="beam-center" thickness={10} />
+        <TalleresSection/>
+      </section>
+      
+      <section className="areas-section">
+        <UniqueDivider variant="beam-center" thickness={10} />
+        <AreasSection/>
       </section>
 
-      <UniqueDivider />
+      <section className="eventos-section">
+        <UniqueDivider variant="beam-center" thickness={10} />
+        <ImportantNews/>
+      </section>
+ 
 
-      <section className="carousel-section">
-        <Carousel />
+      <section className="proyectos-section">
+        <UniqueDivider variant="beam-center" thickness={10} />
+        <ProyectosSection/>
       </section>
 
-      <UniqueDivider />
+      
+      
 
-      <section className="events-section">
-        <p className="body-text">Próximos eventos / talleres</p>
-      </section>
+      <BtnVolverInicio />
 
-      <UniqueDivider />
+      <Footer />
 
-      <section className="news-section">
-        <p className="body-text">Noticias destacadas</p>
-      </section>
-
-      <UniqueDivider />
-
-      <footer className="footer-section">
-        <p className="body-text">Pie de página con info de contacto y redes</p>
-      </footer>
-
-      <div className="scroll-test">
-        <div className="scroll-end-text">
-          <h2>Aquí termina la página (test scroll)</h2>
-        </div>
-      </div>
     </>
   );
 }

@@ -1,14 +1,16 @@
-// Puedes remplazar este SVG por tu propio diseño
-function UniqueDivider() {
+import "../styles/UniqueDivider.css"; 
+
+export default function UniqueDivider({
+  variant = "gradient",           
+  thickness = 2,
+  className = "",
+  style = {},
+}) {
   return (
-    <div className="unique-divider">
-      <svg viewBox="0 0 1440 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path 
-          d="M0,20 C360,80 1080,0 1440,70 L1440,00 L0,0 Z" 
-          fill="#d1d1d1" 
-        />
-      </svg>
-    </div>
+    <div
+      className={`white-divider ${variant} ${className}`}
+      style={{ "--thickness": `${thickness}px`, ...style }}
+      aria-hidden="true"
+    />
   );
 }
-export default UniqueDivider;
