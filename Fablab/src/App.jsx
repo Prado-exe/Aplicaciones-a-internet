@@ -11,6 +11,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import ProyectosSection from './componentes/ProyectosSection';
 import TalleresSection from './componentes/TalleresSection';
 import AreasSection from './componentes/AreasSection';
+import ImportantNews from './componentes/Noticiero';
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
 
       <section className="eventos-section">
         <UniqueDivider variant="beam-center" thickness={10} />
-        <EventosSection />
+        <ImportantNews/>
       </section>
  
 
