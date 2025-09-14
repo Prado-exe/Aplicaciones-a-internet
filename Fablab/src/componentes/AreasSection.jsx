@@ -6,7 +6,7 @@ const areas = [
     id: 1,
     nombre: "Impresión 3D",
     desc: "Crea prototipos y piezas personalizadas con tecnologías de fabricación aditiva.",
-    img: "https://upload.wikimedia.org/wikipedia/commons/5/5c/3D_printer_output_01.jpg"
+    img: "https://hacedores.com/wp-content/uploads/2024/03/Replicator-la-impresora-3D-que-utiliza-la-luz-para-crear-objetos-copia-e1711563345534-1080x567.webp"
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const areas = [
     id: 3,
     nombre: "Realidad Virtual (RV)",
     desc: "Experimenta simulaciones e interacción inmersiva a través de dispositivos VR.",
-    img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308"
+    img: "https://i.blogs.es/3e7bdd/realidad-virtual/1366_2000.jpg"
   },
 ];
 

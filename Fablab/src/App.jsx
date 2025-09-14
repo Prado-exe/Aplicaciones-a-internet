@@ -51,11 +51,7 @@ function App() {
         <UniqueDivider variant="beam-center" thickness={10} />
         <ProyectosSection/>
       </section>
-     
-      <section className="concursos-section">
-        <UniqueDivider variant="beam-center" thickness={10} />
-        <p className="body-text">mostrar concursos</p>
-      </section>
+
       
       
 

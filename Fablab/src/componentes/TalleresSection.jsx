@@ -7,7 +7,7 @@ const talleres = [
     id: 1,
     nombre: "Taller de Modelado 3D",
     desc: "Aprende a diseñar y modelar piezas en 3D, desde la idea hasta el archivo para impresión.",
-    img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97"
+    img: "https://crehana-blog.imgix.net/media/filer_public/ef/4d/ef4ddf09-2d7b-41a4-8d6c-213b5111d4eb/modelado-de-bordes.jpg?auto=format&q=50"
   },
   {
     id: 2,
