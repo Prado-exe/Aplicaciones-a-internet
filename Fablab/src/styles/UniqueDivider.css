@@ -1,12 +1,14 @@
 .unique-divider {
-  width: 100%;
+  /* Ancho total de la pantalla, sin límites */
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .unique-divider svg {
-  display: block;
-  max-width: 100%;
+  width: 100vw;
   height: auto;
+  display: block;
 }

@@ -7,6 +7,11 @@ import Footer from './componentes/footbar';
 import BtnVolverInicio from './componentes/BtnVolverInicio';
 import CarruselMain from './componentes/CarruselMain';
 import EventosSection from './componentes/EventosSetion';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import ProyectosSection from './componentes/ProyectosSection';
+import TalleresSection from './componentes/TalleresSection';
+import AreasSection from './componentes/AreasSection';
+
 
 function App() {
   const [opacity, setOpacity] = useState(1);
@@ -25,32 +30,33 @@ function App() {
 
   return (
     <>
-        <Navbar />
-        <CarruselMain/>
-
-      <UniqueDivider />
-
+      <Navbar />
+      <CarruselMain/>
+      <section className="talleres-section">
+        <UniqueDivider />
+        <TalleresSection/>
+      </section>
       
-
-      <section className="carousel-section">
-        <Carousel />
+      <section className="areas-section">
+        <UniqueDivider />
+        <AreasSection/>
       </section>
 
-      
-
-      <section className="events-section">
+      <section className="eventos-section">
         <UniqueDivider />
-         <EventosSection />
+        <EventosSection />
       </section>
+ 
 
-      
-
-      <section className="news-section">
+      <section className="proyectos-section">
         <UniqueDivider />
-        <p className="body-text">Noticias destacadas</p>
+        <ProyectosSection/>
       </section>
      
-      <UniqueDivider />
+      <section className="concursos-section">
+        <UniqueDivider />
+        <p className="body-text">mostrar concursos</p>
+      </section>
       
       
 

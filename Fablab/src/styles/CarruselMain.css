@@ -104,7 +104,7 @@ top: clamp(50px, 4vh, 110px);
 .hover-area {
   position: absolute;
   top: 0;
-  width: 16%;
+  width: 11%;
   height: 100%;
   cursor: pointer;
   z-index: 10;
