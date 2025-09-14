@@ -67,64 +67,24 @@ const handleParentClick = (key) => {
           </li>
 
           {/* SOBRE NOSOTROS */}
-          <li className={`menu-item has-submenu ${subOpen === 'sobre' ? 'open-sub' : ''}`}>
-            <button
-              type="button"
-              className="menu-parent"
-              aria-haspopup="true"
-              aria-expanded={subOpen === 'sobre'}
-              onClick={() => handleParentClick('sobre')}
-            >
-              Sobre Nosotros <span className="caret" aria-hidden="true">▾</span>
-            </button>
-            <ul className="submenu">
-             <li>
-               <Link to="/pag-quienes-somos" onClick={handleLinkClick}>Quiénes Somos</Link>
-             </li>
-            </ul>
-          </li>
-
-          {/* EVENTOS */}
-          <li className={`menu-item has-submenu ${subOpen === 'eventos' ? 'open-sub' : ''}`}>
-            <button
-              type="button"
-              className="menu-parent"
-              aria-haspopup="true"
-              aria-expanded={subOpen === 'eventos'}
-              onClick={() => handleParentClick('eventos')}
-            >
-              Eventos <span className="caret" aria-hidden="true">▾</span>
-            </button>
-            <ul className="submenu">
-              <li><a href="/" onClick={handleLinkClick}>En curso</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Proximamente</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Finalizados</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Talleres y Proyectos</a></li>
-            </ul>
-          </li>
-
-          {/* SERVICIOS */}
-          <li className={`menu-item has-submenu ${subOpen === 'servicios' ? 'open-sub' : ''}`}>
-            <button
-              type="button"
-              className="menu-parent"
-              aria-haspopup="true"
-              aria-expanded={subOpen === 'servicios'}
-              onClick={() => handleParentClick('servicios')}
-            >
-              Servicios <span className="caret" aria-hidden="true">▾</span>
-            </button>
-            <ul className="submenu">
-              <li><a href="/" onClick={handleLinkClick}>Impresión 3D</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Espacio Co-Working</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Cortadora Láser</a></li>
-              <li><a href="/" onClick={handleLinkClick}>Electronica y Robotica</a></li>
-            </ul>
-          </li>
-
           <li className="menu-item">
-            <a href="/" onClick={handleLinkClick}>Noticias</a>
+            <Link to="/pag-quienes-somos" className="menu-parent" onClick={handleLinkClick}>
+              Quiénes Somos
+            </Link>
           </li>
+          {/* SERVICIOS */}
+          <li className="menu-item">
+            <Link to="/pag-servicios" className="menu-parent" onClick={handleLinkClick}>
+              Servicios
+            </Link>
+          </li>
+          {/* NOTICIAS */}
+          <li className="menu-item">
+            <Link to="/pag-noticiero" className="menu-parent" onClick={handleLinkClick}>
+              Eventos
+            </Link>
+          </li>
+
         </ul>
       </nav>
     </header>

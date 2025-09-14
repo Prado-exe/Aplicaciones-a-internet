@@ -8,7 +8,7 @@
   background-color: #fdfdfd;
 }
 
-/* Separador horizontal */
+/* Separador */
 .separador {
   width: 80%;
   border: 0;
@@ -44,8 +44,8 @@
 }
 
 .staff-item img {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   border-radius: 15px;
   object-fit: cover;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -66,7 +66,7 @@
   color: #555;
 }
 
-/* Quienes Somos */
+/* Quiénes Somos */
 .quienes-somos-texto {
   max-width: 900px;
   text-align: center;
@@ -85,39 +85,40 @@
   color: #333;
 }
 
-/* Misión y Visión bloques */
+/* Misión y Visión */
 .bloque-mision-vision {
   display: flex;
   gap: 2rem;
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
   align-items: center;
   flex-wrap: nowrap;
   opacity: 0;
 }
 
-.bloque-mision-vision.mision .bloque-imagen {
-  order: 1;
+.bloque-mision-vision .bloque-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.bloque-mision-vision.mision .bloque-texto {
-  order: 2;
-}
-
-.bloque-mision-vision.vision .bloque-imagen {
-  order: 2;
-}
-
-.bloque-mision-vision.vision .bloque-texto {
-  order: 1;
-}
-
-.bloque-imagen img {
-  width: 300px;
-  height: 200px;
+.bloque-mision-vision .bloque-imagen img {
+  width: 100%;
+  max-width: 450px; /* imágenes más grandes */
+  height: auto;
   border-radius: 12px;
   object-fit: cover;
 }
+
+.bloque-mision-vision .bloque-texto {
+  flex: 1;
+}
+
+.bloque-mision-vision.mision .bloque-imagen { order: 1; }
+.bloque-mision-vision.mision .bloque-texto { order: 2; }
+
+.bloque-mision-vision.vision .bloque-imagen { order: 2; }
+.bloque-mision-vision.vision .bloque-texto { order: 1; }
 
 .bloque-texto h2 {
   margin-bottom: 0.5rem;
@@ -150,25 +151,10 @@
   100% { opacity: 1; }
 }
 
-/* Clases para animar */
-.animate-fadeDown {
-  animation: fadeDown 0.8s ease forwards;
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 0.3s;
-}
-
-.animate-fadeLeft {
-  animation: fadeLeft 0.8s ease forwards;
-  animation-delay: 0.5s;
-}
-
-.animate-fadeRight {
-  animation: fadeRight 0.8s ease forwards;
-  animation-delay: 0.5s;
-}
+.animate-fadeDown { animation: fadeDown 0.8s ease forwards; }
+.animate-fadeIn   { animation: fadeIn 0.8s ease forwards; animation-delay: 0.3s; }
+.animate-fadeLeft { animation: fadeLeft 0.8s ease forwards; animation-delay: 0.5s; }
+.animate-fadeRight{ animation: fadeRight 0.8s ease forwards; animation-delay: 0.5s; }
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -178,8 +164,7 @@
     gap: 1rem;
   }
 
-  .bloque-imagen img {
-    width: 100%;
-    height: auto;
+  .bloque-mision-vision .bloque-imagen img {
+    max-width: 100%;
   }
 }
