@@ -32,28 +32,28 @@ function App() {
       <Navbar />
       <CarruselMain/>
       <section className="talleres-section">
-        <UniqueDivider />
+        <UniqueDivider variant="beam-center" thickness={10} />
         <TalleresSection/>
       </section>
       
       <section className="areas-section">
-        <UniqueDivider />
+        <UniqueDivider variant="beam-center" thickness={10} />
         <AreasSection/>
       </section>
 
       <section className="eventos-section">
-        <UniqueDivider />
+        <UniqueDivider variant="beam-center" thickness={10} />
         <ImportantNews/>
       </section>
  
 
       <section className="proyectos-section">
-        <UniqueDivider />
+        <UniqueDivider variant="beam-center" thickness={10} />
         <ProyectosSection/>
       </section>
      
       <section className="concursos-section">
-        <UniqueDivider />
+        <UniqueDivider variant="beam-center" thickness={10} />
         <p className="body-text">mostrar concursos</p>
       </section>
       

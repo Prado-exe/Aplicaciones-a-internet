@@ -1,4 +1,4 @@
-.proyectos-novedosos-section {
+.proyectos-section {
   width: 100%;
   padding: 50px 20px;
   background: #fff;
@@ -8,21 +8,28 @@
   box-sizing: border-box;
 }
 
-.proyectos-header {
+.proyectos-section .proyectos-header {
   width: 92%;
   max-width: 1080px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;   
   align-items: center;
-  margin-bottom: 1.8rem;
+  gap: 16px;                
+  margin: 0 auto 1.8rem;
 }
 
+.proyectos-section .proyectos-header > * {
+  flex: 0 0 auto;           
+}
+
+
 .proyectos-title {
-  font-size: 2.2rem;
+  font-size: 2.2rem;         
   font-weight: 700;
-  color: #232178;
+  color: #232178;           
   margin: 0;
   letter-spacing: 0.04em;
+  text-align: center;
 }
 
 .mas-proyectos-btn {
@@ -117,7 +124,7 @@
     gap: 22px;
   }
   .proyectos-header {
-    flex-direction: column;
+    flex-direction: column;  
     gap: 16px;
   }
   .mas-proyectos-btn {
