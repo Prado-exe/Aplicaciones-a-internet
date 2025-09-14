@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import "../styles/PagNoticiero.css";
 
+import imgRobotica from "../assets/Robotica.jpg";
+import imgUnity from "../assets/unity2.webp";
+import imgArduino from "../assets/arduino.jpg";
+import imgGamelab from "../assets/jam.png";
+
 export default function PagNoticiero() {
   const tabs = [
     { id: "todo", label: "Todo" },
@@ -9,23 +14,48 @@ export default function PagNoticiero() {
     { id: "eventos", label: "Eventos" },
   ];
 
-  const eventoImg =
-    "https://scontent.flsc1-1.fna.fbcdn.net/v/t39.30808-6/459023620_18037985900501606_8999948346806728511_n.jpg";
-
   const avisos = [
-    { id: 1, categoria: "avisos", tipo: "Avisos", titulo: "Un acercamiento a la robotica", fecha: "Enero" },
-    { id: 2, categoria: "avisos", tipo: "Aviso", titulo: "Taller unity 2D", fecha: "Febrero" },
-    { id: 3, categoria: "avisos", tipo: "Aviso", titulo: "taller Arduino avanzado ", fecha: "1250-2090", descripcion: " " },
-    { id: 4, categoria: "eventos", tipo: "Eventos", titulo: "presentaciones gamelab", fecha: "Mañana" },
+    {
+      id: 1,
+      categoria: "avisos",
+      tipo: "Avisos",
+      titulo: "Un acercamiento a la robótica",
+      fecha: "Enero",
+      imagen: imgRobotica
+    },
+    {
+      id: 2,
+      categoria: "avisos",
+      tipo: "Aviso",
+      titulo: "Taller Unity 2D",
+      fecha: "Febrero",
+      imagen: imgUnity
+    },
+    {
+      id: 3,
+      categoria: "avisos",
+      tipo: "Aviso",
+      titulo: "Taller Arduino avanzado",
+      fecha: "1250-2090",
+      descripcion: " ",
+      imagen: imgArduino
+    },
+    {
+      id: 4,
+      categoria: "eventos",
+      tipo: "Eventos",
+      titulo: "Presentaciones Gamelab",
+      fecha: "Mañana",
+      imagen: imgGamelab
+    }
   ];
-  
-  const avisosConImagen = avisos.map((aviso) => ({ ...aviso, imagen: eventoImg }));
 
   const [activeTab, setActiveTab] = useState("todo");
+
   const avisosFiltrados =
     activeTab === "todo"
-      ? avisosConImagen
-      : avisosConImagen.filter((aviso) => aviso.categoria === activeTab);
+      ? avisos
+      : avisos.filter((aviso) => aviso.categoria === activeTab);
 
   return (
     <>
