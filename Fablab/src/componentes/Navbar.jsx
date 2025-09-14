@@ -62,10 +62,12 @@ const handleParentClick = (key) => {
 
       <nav id="primary-navigation" className={`navbar ${open ? 'open' : ''}`}>
         <ul className="menu">
+          {/* INICIO */}
           <li className="menu-item">
-            <a href="/" onClick={handleLinkClick}>Inicio</a>
+            <Link to="/" className="menu-parent" onClick={handleLinkClick}>
+              Inicio
+            </Link>
           </li>
-
           {/* SOBRE NOSOTROS */}
           <li className="menu-item">
             <Link to="/pag-quienes-somos" className="menu-parent" onClick={handleLinkClick}>

@@ -13,13 +13,12 @@ export default function PagNoticiero() {
     "https://scontent.flsc1-1.fna.fbcdn.net/v/t39.30808-6/459023620_18037985900501606_8999948346806728511_n.jpg";
 
   const avisos = [
-    { id: 1, categoria: "avisos", tipo: "Avisos", titulo: "Un acercamiento del pirulin", fecha: "Enero" },
-    { id: 2, categoria: "avisos", tipo: "Aviso", titulo: "El fablab se cierra OMGGGGG", fecha: "Febrero" },
-    { id: 3, categoria: "avisos", tipo: "Aviso", titulo: "Atacan pochinki", fecha: "1250-2090", descripcion: "Me meo" },
-    { id: 4, categoria: "eventos", tipo: "Eventos", titulo: "El brian diserta pilucho", fecha: "Mañana" },
+    { id: 1, categoria: "avisos", tipo: "Avisos", titulo: "Un acercamiento a la robotica", fecha: "Enero" },
+    { id: 2, categoria: "avisos", tipo: "Aviso", titulo: "Taller unity 2D", fecha: "Febrero" },
+    { id: 3, categoria: "avisos", tipo: "Aviso", titulo: "taller Arduino avanzado ", fecha: "1250-2090", descripcion: " " },
+    { id: 4, categoria: "eventos", tipo: "Eventos", titulo: "presentaciones gamelab", fecha: "Mañana" },
   ];
-
-  // Asignar la imagen por defecto a todos
+  
   const avisosConImagen = avisos.map((aviso) => ({ ...aviso, imagen: eventoImg }));
 
   const [activeTab, setActiveTab] = useState("todo");

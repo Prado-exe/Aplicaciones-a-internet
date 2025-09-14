@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import '../styles/TalleresSection.css';
 
 const talleres = [
@@ -6,27 +7,27 @@ const talleres = [
     id: 1,
     nombre: "Taller de Modelado 3D",
     desc: "Aprende a diseñar y modelar piezas en 3D, desde la idea hasta el archivo para impresión.",
-    img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97" // Imágen de ejemplo
+    img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97"
   },
   {
     id: 2,
     nombre: "Arduino",
     desc: "Introducción interactiva al mundo de la electrónica y la programación con Arduino.",
-    img: "https://i0.wp.com/dronebotworkshop.com/wp-content/uploads/2023/04/dronebotworkshop-arduino-uno.png?fit=347%2C246&ssl=1" // Imágen de ejemplo
+    img: "https://i0.wp.com/dronebotworkshop.com/wp-content/uploads/2023/04/dronebotworkshop-arduino-uno.png?fit=347%2C246&ssl=1"
   },
   {
     id: 3,
     nombre: "Taller de Unity",
     desc: "Primeros pasos en el desarrollo de videojuegos y simulaciones 3D con Unity.",
-    img: "https://unity.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Ffuvbjjlp%2Fproduction%2F6d1df49565a2ad20ffa8386f1465ba52039133e3-1920x1080.png&w=3840&q=75" // Imágen de ejemplo
+    img: "https://unity.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Ffuvbjjlp%2Fproduction%2F6d1df49565a2ad20ffa8386f1465ba52039133e3-1920x1080.png&w=3840&q=75"
   }
 ];
 
 function TalleresSection() {
   const navigate = useNavigate();
+
   const handleMasTalleres = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(() => navigate('/pag-talleres'), 350);
+    navigate('/pag-talleres');
   };
 
   return (
@@ -37,10 +38,16 @@ function TalleresSection() {
           Más talleres
         </button>
       </div>
+
       <div className="talleres-cards-main">
         {talleres.map(taller => (
           <div className="taller-card" key={taller.id}>
-            <img src={taller.img} alt={taller.nombre} className="taller-img" />
+            <img 
+              src={taller.img} 
+              alt={taller.nombre} 
+              className="taller-img"
+              loading="lazy"   // carga diferida
+            />
             <h3 className="taller-nombre">{taller.nombre}</h3>
             <p className="taller-desc">{taller.desc}</p>
           </div>

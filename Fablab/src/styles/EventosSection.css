@@ -1,12 +1,13 @@
 .eventos-section {
   width: 100%;
   padding: 50px 20px;
-  background: transparent;
+  background: #fff; /* cambio a blanco */
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
 }
+
 
 .eventos-header {
   width: 90%;
